@@ -222,7 +222,7 @@ export default function Home() {
         </div>
 
         <button
-          className="bg-blue-700 text-center my-4 p-2 text-white rounded-xl text-3xl hover:bg-blue-800"
+          className="bg-green-500 text-center my-4 p-2 text-white rounded-xl text-3xl hover:bg-blue-800"
           onClick={() => openModal()}
         >
           Show Ingredients
