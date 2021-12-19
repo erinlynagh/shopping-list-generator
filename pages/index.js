@@ -179,15 +179,15 @@ export default function Home() {
 
   const getRecipeClassName = (recipe) => {
     let className =
-      "rounded-xl mx-2 py-1 text-center my-2 border-slate-200 border-2 border-solid w-1/3";
+      "rounded-xl mx-2 py-1 text-center my-2 border-2 border-solid w-1/3";
     if (selectedRecipes.includes(recipe)) {
-      return className + " bg-blue-700 text-white";
+      return className + " bg-blue-700 text-white border-blue-700";
     }
-    return className;
+    return className + " bg-slate-200 border-black";
   };
 
   return (
-    <div className="h-screen bg-black flex text-center">
+    <div className="flex text-center">
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -205,7 +205,7 @@ export default function Home() {
           </button>
         </div>
       </Modal>
-      <main className="flex flex-col text-white text-2xl w-full">
+      <main className="flex flex-col text-2xl w-full">
         <h1 className="text-center text-3xl text-bold my-5">
           Shopping List Generator
         </h1>
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
 
         <button
-          className="bg-blue-700 text-center mx-20 mt-4 text-white rounded text-xl"
+          className="bg-blue-700 text-center mx-20 mt-4 py-2 text-white rounded-xl text-3xl hover:bg-blue-800"
           onClick={() => openModal()}
         >
           Show Ingredients
