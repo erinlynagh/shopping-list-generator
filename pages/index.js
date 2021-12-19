@@ -177,6 +177,15 @@ export default function Home() {
     return ingredients;
   };
 
+  const getRecipeClassName = (recipe) => {
+    let className =
+      "rounded-xl mx-2 py-1 text-center my-2 border-slate-200 border-2 border-solid w-1/3";
+    if (selectedRecipes.includes(recipe)) {
+      return className + " bg-blue-700 text-white";
+    }
+    return className;
+  };
+
   return (
     <div className="h-screen bg-black flex text-center">
       <Modal
@@ -188,36 +197,33 @@ export default function Home() {
           {getIngredients().map((ingredient) => {
             return <li key={ingredient}>{ingredient}</li>;
           })}
-          {/* <button
-            className="bg-blue-700 rounded text-2xl px-10 py-2 mt-5"
+          <button
+            className="bg-blue-700 rounded text-2xl px-10 py-2 mt-5 text-white"
             onClick={closeModal}
           >
             close
-          </button> */}
+          </button>
         </div>
       </Modal>
       <main className="flex flex-col text-white text-2xl w-full">
-        <h1 className="text-center text-3xl text-bold">
+        <h1 className="text-center text-3xl text-bold my-5">
           Shopping List Generator
         </h1>
-        {/* <div className="grid grid-rows-5 grid-flow-col gap-5 mx-20 py-3 text-left"> */}
-        {recipes.map((recipe, i) => (
-          <div key={i} className="px-3">
-            <label>
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked={selectedRecipes.includes(recipe)}
-                onChange={() => toggleRecipe(recipe)}
-              />
-              {recipe.name}
-            </label>
-          </div>
-        ))}
-        {/* </div> */}
+        <div className="flex justify-center flex-wrap">
+          {recipes.map((recipe, i) => (
+            <div
+              key={i}
+              onClick={() => toggleRecipe(recipe)}
+              className={getRecipeClassName(recipe)}
+            >
+              <p>{recipe.name}</p>
+            </div>
+          ))}
+        </div>
+
         <button
           className="bg-blue-700 text-center mx-20 mt-4 text-white rounded text-xl"
-          onClick={() => setIsOpen(true)}
+          onClick={() => openModal()}
         >
           Show Ingredients
         </button>
