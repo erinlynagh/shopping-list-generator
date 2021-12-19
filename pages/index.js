@@ -92,7 +92,7 @@ const recipes = [
     ],
   },
   {
-    name: "Breakfast Sandwich",
+    name: "Breakfast Sandwhich",
     ingredients: ["Buns", "Egg", "Cheese", "Hashbrown", "Sausage"],
   },
   {
@@ -118,7 +118,7 @@ const recipes = [
     ],
   },
   {
-    name: "Sandwhiches",
+    name: "Sandwhich",
     ingredients: ["Buns", "Meat", "Cheese", "Lettuce", "Mayo"],
   },
   { name: "Fried Tofu and Veggies", ingredients: ["Tofu", "Veggies"] },
