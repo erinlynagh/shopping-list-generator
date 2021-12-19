@@ -193,20 +193,20 @@ export default function Home() {
         onRequestClose={closeModal}
         contentLabel="Ingredients Modal"
       >
-        <div className="text-xl text-center flex-col">
+        <div className="text-center flex-col">
           {getIngredients().map((ingredient) => {
             return <li key={ingredient}>{ingredient}</li>;
           })}
           <button
-            className="bg-blue-700 rounded text-2xl px-10 py-2 mt-5 text-white"
+            className="bg-blue-700 rounded px-10 py-2 mt-5 text-white"
             onClick={closeModal}
           >
             close
           </button>
         </div>
       </Modal>
-      <main className="flex flex-col text-2xl w-full">
-        <h1 className="text-center text-3xl text-bold my-5">
+      <main className="flex flex-col w-full">
+        <h1 className="text-center text-2xl text-bold my-5">
           Shopping List Generator
         </h1>
         <div className="flex justify-center flex-wrap">
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
 
         <button
-          className="bg-green-500 text-center mx-4 my-4 p-2 text-white rounded-xl text-3xl"
+          className="bg-green-500 text-center mx-4 my-4 p-2 text-white rounded-xl text-2xl"
           onClick={() => openModal()}
         >
           Show Ingredients
