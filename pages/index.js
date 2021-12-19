@@ -200,11 +200,11 @@ export default function Home() {
         <h1 className="text-center text-3xl text-bold">
           Shopping List Generator
         </h1>
-        {recipes.map((recipe) => (
-          <div className="px-3">
+        {/* <div className="grid grid-rows-5 grid-flow-col gap-5 mx-20 py-3 text-left"> */}
+        {recipes.map((recipe, i) => (
+          <div key={i} className="px-3">
             <label>
               <input
-                key={recipe.name}
                 type="checkbox"
                 className="mr-2"
                 checked={selectedRecipes.includes(recipe)}
@@ -214,6 +214,7 @@ export default function Home() {
             </label>
           </div>
         ))}
+        {/* </div> */}
         <button
           className="bg-blue-700 text-center mx-20 mt-4 text-white rounded text-xl"
           onClick={() => setIsOpen(true)}
