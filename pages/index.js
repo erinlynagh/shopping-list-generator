@@ -480,6 +480,7 @@ export default function Home() {
         }
       });
     });
+    ingredients.sort((a, b) => a.name > b.name);
     return ingredients.sort((a, b) => a.category.name > b.category.name);
   };
 
@@ -520,11 +521,9 @@ export default function Home() {
           <p>---</p> */}
           {getIngredients().map((ingredient, i) => {
             if (!selectedCategories.includes(ingredient.category.name)) {
-              {
-                <p className="invisible">
-                  {selectedCategories.push(ingredient.category.name)}
-                </p>;
-              }
+              <p className="invisible">
+                {selectedCategories.push(ingredient.category.name)}
+              </p>;
               return (
                 <React.Fragment key={i}>
                   <h2 className="text-2xl">{ingredient.category.name}</h2>
